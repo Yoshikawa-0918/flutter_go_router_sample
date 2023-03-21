@@ -17,6 +17,7 @@ class SubRoute1 extends StatelessWidget {
             const Text('This is subroute screen1'),
             ElevatedButton(
               onPressed: () {
+                //SubRoute2に遷移する
                 context.go('/subroute1/subroute2');
               },
               child: const Text('Go to subroute screen2'),
@@ -44,6 +45,7 @@ class SubRoute2 extends StatelessWidget {
             const Text('This is subroutes screen2'),
             ElevatedButton(
               onPressed: () {
+                //HomeScreenに遷移する
                 context.go('/');
               },
               child: const Text('Go back HomeScreen'),

@@ -17,6 +17,7 @@ class TopRoute extends StatelessWidget {
             const Text('This is toproute screen'),
             ElevatedButton(
               onPressed: () {
+                //HomeScreenに遷移する
                 context.go('/');
               },
               child: const Text('Go back HomeScreen'),

@@ -3,6 +3,8 @@ import 'package:flutter_go_router_sample/sub_routes.dart';
 import 'package:flutter_go_router_sample/top_route.dart';
 import 'package:go_router/go_router.dart';
 
+//go_routerはWeb向きのパッケージなのでモバイルアプリにはあまり使わないかも...
+
 void main() {
   runApp(const MyApp());
 }
@@ -12,18 +14,21 @@ final GoRouter _router = GoRouter(
   initialLocation: '/',
   routes: <RouteBase>[
     GoRoute(
+      //HomeScreenのパス
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
         return const HomeScreen();
       },
       routes: <RouteBase>[
         GoRoute(
+          //SubRoute1のパス
           path: 'subroute1',
           builder: (BuildContext context, GoRouterState state) {
             return const SubRoute1();
           },
           routes: <RouteBase>[
             GoRoute(
+              //SubRoute2のパス
               path: 'subroute2',
               builder: (BuildContext context, GoRouterState state) {
                 return const SubRoute2();
@@ -34,6 +39,7 @@ final GoRouter _router = GoRouter(
       ],
     ),
     GoRoute(
+      //TopRouteのパス
       path: '/toproute',
       builder: (BuildContext context, GoRouterState state) {
         return const TopRoute();
@@ -48,6 +54,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      //右上のDEBUG印を表示しない
+      debugShowCheckedModeBanner: false,
+      //ここのプロパティはgo_routerのバージョンによって変わるので要注意
       routerConfig: _router,
     );
   }
