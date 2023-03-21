@@ -11,7 +11,6 @@ void main() {
 
 final GoRouter _router = GoRouter(
   //最初に表示するパスの定義
-  initialLocation: '/',
   routes: <RouteBase>[
     GoRoute(
       //HomeScreenのパス
